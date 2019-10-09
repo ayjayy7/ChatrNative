@@ -1,19 +1,30 @@
 import React from "react";
 import { Redirect } from "react-router-dom";
 import { connect } from "react-redux";
+import {
+  Container,
+  Header,
+  Content,
+  Form,
+  Item,
+  Input,
+  Button,
+  Text,
+  View
+} from "native-base";
 
 const SuperSecretPage = ({ user }) => {
   if (!user) return <Redirect to="/login" />;
 
   return (
-    <div className="bg2 text-center my-auto z-1">
-      <h1
+    <View className="bg2 text-center my-auto z-1">
+      <Text
         className="my-5 text-white"
         style={{ fontFamily: "Acme", fontSize: 100 }}
       >
         Welcome {user.username}!
-      </h1>
-    </div>
+      </Text>
+    </View>
   );
 };
 

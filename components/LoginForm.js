@@ -2,6 +2,17 @@ import React, { Component } from "react";
 import { Link, Redirect } from "react-router-dom";
 import { connect } from "react-redux";
 import * as actionCreators from "../redux/actions";
+import {
+  Container,
+  Header,
+  Content,
+  Form,
+  Item,
+  Input,
+  Button,
+  Text,
+  View
+} from "native-base";
 
 class Login extends Component {
   state = {
@@ -9,8 +20,7 @@ class Login extends Component {
     password: ""
   };
 
-  handleChange = event =>
-    this.setState({ [event.target.name]: event.target.value });
+  handleChange = keyValue => this.setState(keyValue);
 
   handleSubmit = event => {
     event.preventDefault();
@@ -18,18 +28,18 @@ class Login extends Component {
   };
 
   render() {
-    if (this.props.user) return <Redirect to="/private" />;
+    if (this.props.user) return this.props.navigation.replace("SecretScreen");
     const { username, password } = this.state;
 
     return (
-      <div className=" my-6" id="beeesh">
-        <div className="container-fluid jumbotron bg-transparent my-5 text-center align-ceneter">
-          <div className=" col-6 mx-auto my-5">
-            <div className="card my-5">
-              <div className="card-body">
-                <form onSubmit={this.handleSubmit}>
-                  <div className="form-group">
-                    <label htmlFor="username">Username</label>
+      <View className=" my-6" id="beeesh">
+        <View className="container-fluid jumbotron bg-transparent my-5 text-center align-ceneter">
+          <View className=" col-6 mx-auto my-5">
+            <View className="card my-5">
+              <View className="card-body">
+                <Form onSubmit={this.handleSubmit}>
+                  <View className="form-group">
+                    <Text htmlFor="username">Username</Text>
                     <input
                       type="text"
                       className="form-control"
@@ -39,9 +49,9 @@ class Login extends Component {
                       placeholder="Username"
                       onChange={this.handleChange}
                     />
-                  </div>
-                  <div className="form-group">
-                    <label htmlFor="password">Password</label>
+                  </View>
+                  <View className="form-group">
+                    <Text htmlFor="password">Password</Text>
                     <input
                       type="password"
                       className="form-control"
@@ -51,30 +61,29 @@ class Login extends Component {
                       placeholder="Password"
                       onChange={this.handleChange}
                     />
-                    <p style={{ color: "red" }}>
-                      {" "}
+                    <Text style={{ color: "red" }}>
                       {this.props.errors
                         ? this.props.errors.non_field_errors
                         : ""}
-                    </p>
-                  </div>
+                    </Text>
+                  </View>
 
-                  <button type="submit" className="btn btn-danger">
+                  <Button type="submit" className="btn btn-danger">
                     Login
-                  </button>
-                  <br />
+                  </Button>
+
                   <Link
                     to="/signup"
                     className="btn btn-link text-danger my-2 my-sm-0"
                   >
                     Signup for an account
                   </Link>
-                </form>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+                </Form>
+              </View>
+            </View>
+          </View>
+        </View>
+      </View>
     );
   }
 }

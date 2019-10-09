@@ -1,27 +1,37 @@
 import React from "react";
 import { Link, Redirect } from "react-router-dom";
 import { connect } from "react-redux";
-
+import {
+  Container,
+  Header,
+  Content,
+  Form,
+  Item,
+  Input,
+  Button,
+  Text,
+  View
+} from "native-base";
 const Welcome = ({ user }) => {
   if (user) return <Redirect to="/private" />;
   return (
-    <header className=" bg masthead d-flex">
-      <div className="container text-center my-auto z-1" id="beeesh">
-        <h1
+    <Header className=" bg masthead d-flex">
+      <View className="container text-center my-auto z-1" id="beeesh">
+        <Text
           className="mb-1 text-white"
           style={{ fontFamily: "Acme", fontSize: 100 }}
         >
           WELCOME TO CHATR
-        </h1>
-        <h3 className="mb-5 text-white" style={{ fontFamily: "Acme" }}>
-          <em>You're gonna need to login to see the messages</em>
-        </h3>
+        </Text>
+        <Text className="mb-5 text-white" style={{ fontFamily: "Acme" }}>
+          <Text>You're gonna need to login to see the messages</Text>
+        </Text>
         <Link to="/login" className="btn btn-outline-danger btn-lg">
           Login
         </Link>
-      </div>
-      <div className="overlay z-0" />
-    </header>
+      </View>
+      <View className="overlay z-0" />
+    </Header>
   );
 };
 
