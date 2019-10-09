@@ -7,20 +7,22 @@ import { connect } from "react-redux";
 class SearchBar extends React.Component {
   render() {
     return (
-      <div className="form-group col-12">
-        <div className="input-group">
+      <View className="form-group col-12">
+        <View className="input-group">
           <input
             className="form-control"
             type="text"
-            onChange={event => this.props.filterChannels(event.target.value)}
+            onchangeText={event =>
+              this.props.filterChannels(event.target.value)
+            }
           />
-          <div className="input-group-append">
+          <View className="input-group-append">
             <span className="input-group-text">
               <FontAwesomeIcon icon={faSearch} />
             </span>
-          </div>
-        </div>
-      </div>
+          </View>
+        </View>
+      </View>
     );
   }
 }

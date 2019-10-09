@@ -27,9 +27,9 @@ const NavBar = props => {
         <span className="navbar-toggler-icon" />
       </button>
       {!!props.user && (
-        <div className="collapse navbar-collapse" id="navbarResponsive">
+        <View className="collapse navbar-collapse" id="navbarResponsive">
           <SideNav />
-        </div>
+        </View>
       )}
       <AuthButton />
     </nav>

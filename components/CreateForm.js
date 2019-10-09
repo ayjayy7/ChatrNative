@@ -22,13 +22,13 @@ class CreateForm extends React.Component {
   render() {
     if (!this.props.user) return <Redirect to="/private" />;
     return (
-      <div className="bg3 my-6">
-        <div className="container-fluid jumbotron bg-transparent my-5 text-center align-ceneter"></div>
-        <div className=" col-6 mx-auto my-5">
-          <div className="card my-5">
-            <div className="card-body">
+      <View className="bg3 my-6">
+        <View className="container-fluid jumbotron bg-transparent my-5 text-center align-ceneter"></View>
+        <View className=" col-6 mx-auto my-5">
+          <View className="card my-5">
+            <View className="card-body">
               <form name="createForm" onSubmit={this.submitHandler}>
-                <div className="form-group">
+                <View className="form-group">
                   <p className="h4 text-center mb-4">Create a Channel</p>
                   <label htmlFor="channelname"> Channel Name</label>
                   <br />
@@ -37,31 +37,31 @@ class CreateForm extends React.Component {
                     className="form-control"
                     name="name"
                     placeholder="Enter channel name"
-                    onChange={this.changeHandler}
+                    onchangeText={this.changeHandler}
                   />
                   <br />
-                </div>
-                <div className="form-group">
+                </View>
+                <View className="form-group">
                   <label htmlFor="backgroundimage">Background image</label>
                   <input
                     type="text"
                     className="form-control"
                     name="image_url"
                     placeholder="Enter image url"
-                    onChange={this.changeHandler}
+                    onchangeText={this.changeHandler}
                   />
-                </div>
-                <div className="text-center mt-4">
+                </View>
+                <View className="text-center mt-4">
                   <button type="submit" className="btn btn-danger">
                     Create
                   </button>
-                </div>
+                </View>
                 <br />
               </form>
-            </div>
-          </div>
-        </div>
-      </div>
+            </View>
+          </View>
+        </View>
+      </View>
     );
   }
 }
