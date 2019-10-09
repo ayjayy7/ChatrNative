@@ -17,9 +17,11 @@ class SearchBar extends React.Component {
             }
           />
           <View className="input-group-append">
-            <span className="input-group-text">
+
+            <Text className="input-group-text">
               <FontAwesomeIcon icon={faSearch} />
-            </span>
+            </Text>
+
           </View>
         </View>
       </View>

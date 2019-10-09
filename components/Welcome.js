@@ -10,7 +10,9 @@ const Welcome = ({ user }) => {
   return (
     <header className=" bg masthead d-flex">
       <View className="container text-center my-auto z-1" id="beeesh">
+
         <text
+
           className="mb-1 text-white"
           style={{ fontFamily: "Acme", fontSize: 100 }}
         >

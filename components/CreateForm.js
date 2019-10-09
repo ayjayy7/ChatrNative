@@ -2,6 +2,8 @@ import React from "react";
 import { connect } from "react-redux";
 import { Link, Redirect } from "react-router-dom";
 import { addChannel } from "../redux/actions";
+// NativeBase Components
+import { Text, View } from "native-base";
 
 class CreateForm extends React.Component {
   state = {
@@ -29,9 +31,11 @@ class CreateForm extends React.Component {
             <View className="card-body">
               <form name="createForm" onSubmit={this.submitHandler}>
                 <View className="form-group">
+
                   <p className="h4 text-center mb-4">Create a Channel</p>
                   <label htmlFor="channelname"> Channel Name</label>
                   <br />
+
                   <input
                     type="text"
                     className="form-control"
@@ -39,10 +43,11 @@ class CreateForm extends React.Component {
                     placeholder="Enter channel name"
                     onchangeText={this.changeHandler}
                   />
+
                   <br />
                 </View>
                 <View className="form-group">
-                  <label htmlFor="backgroundimage">Background image</label>
+
                   <input
                     type="text"
                     className="form-control"
@@ -56,7 +61,9 @@ class CreateForm extends React.Component {
                     Create
                   </button>
                 </View>
+
                 <br />
+
               </form>
             </View>
           </View>

@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 import Messages from "./Messages";
 import { fetchChannel, sendMessage } from "../redux/actions";
 import { Redirect } from "react-router-dom";
+import { Text, View } from "native-base";
 
 // react-native
 import { View } from "native-base";
@@ -96,17 +97,19 @@ class Channel extends React.Component {
             <form name="messageForm" onSubmit={this.submitHandler}>
               <View className=" col-12 ">
                 <View className=" btn float-right pull-right">
+
                   <Image
                     id="ej"
                     source={{
                       uri:
                         "https://cdn.shopify.com/s/files/1/1061/1924/files/Hugging_Face_Emoji_2028ce8b-c213-4d45-94aa-21e1a0842b4d_large.png?15202324258887420558"
                     }}
+
                     onClick={() => this.setState({ show: !this.state.show })}
                   />
-                  <span>
+                  <Text>
                     {this.state.show ? <Picker onSelect={this.addEmoji} /> : ""}
-                  </span>
+                  </Text>
                   <input
                     className=" btn btn-danger btn-block "
                     type="submit"
