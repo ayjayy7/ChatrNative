@@ -3,6 +3,9 @@ import { Link, Redirect } from "react-router-dom";
 import { connect } from "react-redux";
 import * as actionCreators from "../redux/actions";
 
+// react-native
+import { View } from "native-base";
+
 class Login extends Component {
   state = {
     username: "",
@@ -22,13 +25,13 @@ class Login extends Component {
     const { username, password } = this.state;
 
     return (
-      <div className=" my-6" id="beeesh">
-        <div className="container-fluid jumbotron bg-transparent my-5 text-center align-ceneter">
-          <div className=" col-6 mx-auto my-5">
-            <div className="card my-5">
-              <div className="card-body">
+      <View className=" my-6" id="beeesh">
+        <View className="container-fluid jumbotron bg-transparent my-5 text-center align-ceneter">
+          <View className=" col-6 mx-auto my-5">
+            <View className="card my-5">
+              <View className="card-body">
                 <form onSubmit={this.handleSubmit}>
-                  <div className="form-group">
+                  <View className="form-group">
                     <label htmlFor="username">Username</label>
                     <input
                       type="text"
@@ -37,10 +40,10 @@ class Login extends Component {
                       value={username}
                       name="username"
                       placeholder="Username"
-                      onChange={this.handleChange}
+                      onchangeText={this.handleChange}
                     />
-                  </div>
-                  <div className="form-group">
+                  </View>
+                  <View className="form-group">
                     <label htmlFor="password">Password</label>
                     <input
                       type="password"
@@ -49,7 +52,7 @@ class Login extends Component {
                       value={password}
                       name="password"
                       placeholder="Password"
-                      onChange={this.handleChange}
+                      onchangeText={this.handleChange}
                     />
                     <p style={{ color: "red" }}>
                       {" "}
@@ -57,7 +60,7 @@ class Login extends Component {
                         ? this.props.errors.non_field_errors
                         : ""}
                     </p>
-                  </div>
+                  </View>
 
                   <button type="submit" className="btn btn-danger">
                     Login
@@ -70,11 +73,11 @@ class Login extends Component {
                     Signup for an account
                   </Link>
                 </form>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+              </View>
+            </View>
+          </View>
+        </View>
+      </View>
     );
   }
 }

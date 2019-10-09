@@ -28,7 +28,7 @@ class SideNav extends React.Component {
       />
     ));
     return (
-      <div>
+      <View>
         {this.props.loading ? <Loading /> : ""}
         <ul
           className="navbar-nav navbar-sidenav bg-danger overflow-hidden"
@@ -39,7 +39,7 @@ class SideNav extends React.Component {
               <span className="nav-link-text mr-2">Channels</span>
               <FontAwesomeIcon icon={faPlusCircle} />
             </Link>
-            <SearchBar onChange={this.filterChannels} />
+            <SearchBar onchangeText={this.filterChannels} />
           </li>
           {channelLinks}
         </ul>
@@ -60,7 +60,7 @@ class SideNav extends React.Component {
             </span>
           </li>
         </ul>
-      </div>
+      </View>
     );
   }
 }

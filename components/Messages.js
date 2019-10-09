@@ -1,9 +1,12 @@
 import React from "react";
 
+// react-native
+import { View } from "native-base";
+
 const Messages = props => {
   return (
     <li>
-      <div className=" ">
+      <View className=" ">
         <small className="card-body text-danger">
           <b>
             <h5 className="text-white bold" id="besh2">
@@ -17,7 +20,7 @@ const Messages = props => {
           {props.messageObject.message}
         </h3>
         <p class="card-text"></p>
-      </div>
+      </View>
     </li>
   );
 };

@@ -5,7 +5,7 @@ const fn = () => {
   // Configure tooltips for collapsed side navigation
   $('.navbar-sidenav [data-toggle="tooltip"]').tooltip({
     template:
-      '<div class="tooltip navbar-sidenav-tooltip" role="tooltip" style="pointer-events: none;"><div class="arrow"></div><div class="tooltip-inner"></div></div>'
+      '<View class="tooltip navbar-sidenav-tooltip" role="tooltip" style="pointer-events: none;"><View class="arrow"></View><View class="tooltip-inner"></View></View>'
   });
   // Toggle the side navigation
   $("#sidenavToggler").click(function(e) {

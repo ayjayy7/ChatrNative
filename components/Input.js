@@ -1,6 +1,9 @@
 import React, { Component } from "react";
 import "./Input.css";
 
+// react-native
+import { View } from "native-base";
+
 const classNames = require("classnames");
 
 export class Input extends Component {
@@ -12,7 +15,7 @@ export class Input extends Component {
     };
   }
 
-  onChange(e) {
+  onchangeText(e) {
     if (
       this.props.maxlength &&
       (e.target.value || "").length > this.props.maxlength
@@ -25,7 +28,7 @@ export class Input extends Component {
     this.setState({
       value: e.target.value
     });
-    if (this.props.onChange instanceof Function) this.props.onChange(e);
+    if (this.props.onchangeText instanceof Function) this.props.onchangeText(e);
 
     if (this.props.multiline === true) {
       if (this.props.autoHeight === true) {
@@ -44,7 +47,7 @@ export class Input extends Component {
       target: this.input
     };
     this.input.value = "";
-    this.onChange(event);
+    this.onchangeText(event);
   }
 
   componentDidMount() {
@@ -53,9 +56,9 @@ export class Input extends Component {
 
   render() {
     return (
-      <div className={classNames("rce-container-input", this.props.className)}>
+      <View className={classNames("rce-container-input", this.props.className)}>
         {this.props.leftButtons && (
-          <div className="rce-input-buttons">{this.props.leftButtons}</div>
+          <View className="rce-input-buttons">{this.props.leftButtons}</View>
         )}
         {this.props.multiline === false ? (
           <input
@@ -69,7 +72,7 @@ export class Input extends Component {
             placeholder={this.props.placeholder}
             value={this.state.value}
             style={this.props.inputStyle}
-            onChange={this.onChange.bind(this)}
+            onchangeText={this.onchangeText.bind(this)}
             onCopy={this.props.onCopy}
             onCut={this.props.onCut}
             onPaste={this.props.onPaste}
@@ -94,7 +97,7 @@ export class Input extends Component {
             placeholder={this.props.placeholder}
             value={this.state.value}
             style={this.props.inputStyle}
-            onChange={this.onChange.bind(this)}
+            onchangeText={this.onchangeText.bind(this)}
             onCopy={this.props.onCopy}
             onCut={this.props.onCut}
             onPaste={this.props.onPaste}
@@ -109,9 +112,9 @@ export class Input extends Component {
           ></textarea>
         )}
         {this.props.rightButtons && (
-          <div className="rce-input-buttons">{this.props.rightButtons}</div>
+          <View className="rce-input-buttons">{this.props.rightButtons}</View>
         )}
-      </div>
+      </View>
     );
   }
 }
@@ -120,7 +123,7 @@ Input.defaultProps = {
   type: "text",
   placeholder: "",
   defaultValue: "",
-  onChange: null,
+  onchangeText: null,
   rightButtons: null,
   leftButtons: null,
   multiline: false,
