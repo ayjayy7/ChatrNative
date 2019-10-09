@@ -6,7 +6,7 @@ const Welcome = ({ user }) => {
   if (user) return <Redirect to="/private" />;
   return (
     <header className=" bg masthead d-flex">
-      <div className="container text-center my-auto z-1" id="beeesh">
+      <View className="container text-center my-auto z-1" id="beeesh">
         <h1
           className="mb-1 text-white"
           style={{ fontFamily: "Acme", fontSize: 100 }}
@@ -19,8 +19,8 @@ const Welcome = ({ user }) => {
         <Link to="/login" className="btn btn-outline-danger btn-lg">
           Login
         </Link>
-      </div>
-      <div className="overlay z-0" />
+      </View>
+      <View className="overlay z-0" />
     </header>
   );
 };

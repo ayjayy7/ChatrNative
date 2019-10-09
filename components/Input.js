@@ -53,9 +53,9 @@ export class Input extends Component {
 
   render() {
     return (
-      <div className={classNames("rce-container-input", this.props.className)}>
+      <View className={classNames("rce-container-input", this.props.className)}>
         {this.props.leftButtons && (
-          <div className="rce-input-buttons">{this.props.leftButtons}</div>
+          <View className="rce-input-buttons">{this.props.leftButtons}</View>
         )}
         {this.props.multiline === false ? (
           <input
@@ -109,9 +109,9 @@ export class Input extends Component {
           ></textarea>
         )}
         {this.props.rightButtons && (
-          <div className="rce-input-buttons">{this.props.rightButtons}</div>
+          <View className="rce-input-buttons">{this.props.rightButtons}</View>
         )}
-      </div>
+      </View>
     );
   }
 }

@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 import Messages from "./Messages";
 import { fetchChannel, sendMessage } from "../redux/actions";
 import { Redirect } from "react-router-dom";
+import { Text, View } from "native-base";
 
 //////////////////
 import "emoji-mart/css/emoji-mart.css";
@@ -65,7 +66,7 @@ class Channel extends React.Component {
     clearInterval(this.interval);
   }
 
-  // onEmojiClick = (diversities, object);
+  // onEmojiClick = (Viewersities, object);
 
   render() {
     const channel = this.props.currentChannel;
@@ -80,7 +81,7 @@ class Channel extends React.Component {
         />
       ));
       return (
-        <div
+        <View
           className="pic"
           id="besh3"
           style={{
@@ -89,24 +90,24 @@ class Channel extends React.Component {
         >
           <ul style={{ listStyle: "none" }}>{messages}</ul>
 
-          <div className="fixed-bottom">
+          <View className="fixed-bottom">
             <form name="messageForm" onSubmit={this.submitHandler}>
-              <div className=" col-12 ">
-                <div className=" btn float-right pull-right">
-                  <img
+              <View className=" col-12 ">
+                <View className=" btn float-right pull-right">
+                  <image
                     id="ej"
-                    src="https://cdn.shopify.com/s/files/1/1061/1924/files/Hugging_Face_Emoji_2028ce8b-c213-4d45-94aa-21e1a0842b4d_large.png?15202324258887420558"
+                    source="https://cdn.shopify.com/s/files/1/1061/1924/files/Hugging_Face_Emoji_2028ce8b-c213-4d45-94aa-21e1a0842b4d_large.png?15202324258887420558"
                     onClick={() => this.setState({ show: !this.state.show })}
                   />
-                  <span>
+                  <Text>
                     {this.state.show ? <Picker onSelect={this.addEmoji} /> : ""}
-                  </span>
+                  </Text>
                   <input
                     className=" btn btn-danger btn-block "
                     type="submit"
                     value="Send"
                   />
-                </div>
+                </View>
                 <textarea
                   className=" col-9 rounded-pill shadow  float-right pull-right"
                   name="message"
@@ -114,13 +115,13 @@ class Channel extends React.Component {
                   onChange={this.changeHandler}
                   value={this.state.message}
                 ></textarea>
-              </div>
+              </View>
             </form>
-          </div>
-        </div>
+          </View>
+        </View>
       );
     } else {
-      return <div> Not Found </div>;
+      return <View> Not Found </View>;
     }
   }
 }

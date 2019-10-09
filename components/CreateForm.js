@@ -2,6 +2,8 @@ import React from "react";
 import { connect } from "react-redux";
 import { Link, Redirect } from "react-router-dom";
 import { addChannel } from "../redux/actions";
+// NativeBase Components
+import { Text, View } from "native-base";
 
 class CreateForm extends React.Component {
   state = {
@@ -22,16 +24,15 @@ class CreateForm extends React.Component {
   render() {
     if (!this.props.user) return <Redirect to="/private" />;
     return (
-      <div className="bg3 my-6">
-        <div className="container-fluid jumbotron bg-transparent my-5 text-center align-ceneter"></div>
-        <div className=" col-6 mx-auto my-5">
-          <div className="card my-5">
-            <div className="card-body">
+      <View className="bg3 my-6">
+        <View className="container-fluid jumbotron bg-transparent my-5 text-center align-ceneter"></View>
+        <View className=" col-6 mx-auto my-5">
+          <View className="card my-5">
+            <View className="card-body">
               <form name="createForm" onSubmit={this.submitHandler}>
-                <div className="form-group">
-                  <p className="h4 text-center mb-4">Create a Channel</p>
-                  <label htmlFor="channelname"> Channel Name</label>
-                  <br />
+                <View className="form-group">
+                  <Text className="h4 text-center mb-4">Create a Channel</Text>
+                  <Text htmlFor="channelname"> Channel Name</Text>
                   <input
                     type="text"
                     className="form-control"
@@ -39,10 +40,9 @@ class CreateForm extends React.Component {
                     placeholder="Enter channel name"
                     onChange={this.changeHandler}
                   />
-                  <br />
-                </div>
-                <div className="form-group">
-                  <label htmlFor="backgroundimage">Background image</label>
+                </View>
+                <View className="form-group">
+                  <Text htmlFor="backgroundimage">Background image</Text>
                   <input
                     type="text"
                     className="form-control"
@@ -50,18 +50,17 @@ class CreateForm extends React.Component {
                     placeholder="Enter image url"
                     onChange={this.changeHandler}
                   />
-                </div>
-                <div className="text-center mt-4">
+                </View>
+                <View className="text-center mt-4">
                   <button type="submit" className="btn btn-danger">
                     Create
                   </button>
-                </div>
-                <br />
+                </View>
               </form>
-            </div>
-          </div>
-        </div>
-      </div>
+            </View>
+          </View>
+        </View>
+      </View>
     );
   }
 }

@@ -7,7 +7,7 @@ import { faHashtag } from "@fortawesome/free-solid-svg-icons";
 
 const ChannelNavLink = ({ channel }) => {
   return (
-    <li
+    <ListItem
       className="nav-item"
       data-toggle="tooltip"
       data-placement="right"
@@ -15,9 +15,9 @@ const ChannelNavLink = ({ channel }) => {
     >
       <NavLink className="nav-link" to={`/channels/${channel.id}`}>
         <FontAwesomeIcon icon={faHashtag} />
-        <span className="nav-link-text"> {channel.name}</span>
+        <Text className="nav-link-text"> {channel.name}</Text>
       </NavLink>
-    </li>
+    </ListItem>
   );
 };
 

@@ -15,7 +15,7 @@ const NavBar = props => {
       <Link className="navbar-brand" to="/welcome">
         Chatr2.0
       </Link>
-      <button
+      <Button
         className="navbar-toggler navbar-toggler-right"
         type="button"
         data-toggle="collapse"
@@ -25,11 +25,11 @@ const NavBar = props => {
         aria-label="Toggle navigation"
       >
         <span className="navbar-toggler-icon" />
-      </button>
+      </Button>
       {!!props.user && (
-        <div className="collapse navbar-collapse" id="navbarResponsive">
+        <View className="collapse navbar-collapse" id="navbarResponsive">
           <SideNav />
-        </div>
+        </View>
       )}
       <AuthButton />
     </nav>
