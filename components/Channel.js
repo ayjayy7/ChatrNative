@@ -75,7 +75,7 @@ class Channel extends React.Component {
     clearInterval(this.interval);
   }
 
-  // onEmojiClick = (diversities, object);
+  // onEmojiClick = (Viewersities, object);
 
   render() {
     const channel = this.props.currentChannel;
@@ -105,7 +105,10 @@ class Channel extends React.Component {
                 <View className=" btn float-right pull-right">
                   <Image
                     id="ej"
-                    src="https://cdn.shopify.com/s/files/1/1061/1924/files/Hugging_Face_Emoji_2028ce8b-c213-4d45-94aa-21e1a0842b4d_large.png?15202324258887420558"
+                    source={{
+                      uri:
+                        "https://cdn.shopify.com/s/files/1/1061/1924/files/Hugging_Face_Emoji_2028ce8b-c213-4d45-94aa-21e1a0842b4d_large.png?15202324258887420558"
+                    }}
                     onClick={() => this.setState({ show: !this.state.show })}
                   />
                   <Text>
@@ -121,7 +124,7 @@ class Channel extends React.Component {
                   className=" col-9 rounded-pill shadow  float-right pull-right"
                   name="message"
                   placeholder="Type your message"
-                  onChange={this.changeHandler}
+                  onchangeText={this.changeHandler}
                   value={this.state.message}
                 ></textarea>
               </View>

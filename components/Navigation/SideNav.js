@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import * as actionCreators from "../../redux/actions";
 import SearchBar from "./SearchBar";
+import { connect } from "react-redux";
 
 // Fontawesome
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -28,23 +29,29 @@ class SideNav extends React.Component {
       />
     ));
     return (
-      <div>
+      <View>
         {this.props.loading ? <Loading /> : ""}
-        <ul
+        <List
           className="navbar-nav navbar-sidenav bg-danger overflow-hidden"
           id="exampleAccordion"
         >
-          <li className="nav-item" data-toggle="tooltip" data-placement="right">
+          <ListItem
+            className="nav-item"
+            data-toggle="tooltip"
+            data-placement="right"
+          >
             <Link className="nav-link heading" to="/createChannel">
               <span className="nav-link-text mr-2">Channels</span>
               <FontAwesomeIcon icon={faPlusCircle} />
             </Link>
+
             <SearchBar onChange={this.filterChannels} />
-          </li>
+          </ListItem>
+
           {channelLinks}
-        </ul>
-        <ul className="navbar-nav sidenav-toggler bg-danger">
-          <li className="nav-item">
+        </List>
+        <List className="navbar-nav sidenav-toggler bg-danger">
+          <ListItem className="nav-item">
             <span
               className="nav-link text-center"
               id="sidenavToggler"
@@ -58,9 +65,11 @@ class SideNav extends React.Component {
                 icon={this.state.collapsed ? faAngleRight : faAngleLeft}
               />
             </span>
-          </li>
-        </ul>
-      </div>
+
+          </ListItem>
+        </List>
+
+      </View>
     );
   }
 }

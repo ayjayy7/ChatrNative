@@ -15,7 +15,7 @@ const StackNav = createStackNavigator(
     WelcomeScreen: Welcome,
     LoginScreen: LoginForm,
     CreatetScreen: CreateForm,
-    SecretScree: SuperSecretPage,
+    SecretScreen: SuperSecretPage,
     ChannelScreen: Channel
   },
   {

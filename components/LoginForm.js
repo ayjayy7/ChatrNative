@@ -14,6 +14,9 @@ import {
   View
 } from "native-base";
 
+// react-native
+import { View } from "native-base";
+
 class Login extends Component {
   state = {
     username: "",
@@ -47,7 +50,7 @@ class Login extends Component {
                       value={username}
                       name="username"
                       placeholder="Username"
-                      onChange={this.handleChange}
+                      onchangeText={this.handleChange}
                     />
                   </View>
                   <View className="form-group">
@@ -59,7 +62,7 @@ class Login extends Component {
                       value={password}
                       name="password"
                       placeholder="Password"
-                      onChange={this.handleChange}
+                      onchangeText={this.handleChange}
                     />
                     <Text style={{ color: "red" }}>
                       {this.props.errors

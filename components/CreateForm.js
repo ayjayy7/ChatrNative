@@ -46,7 +46,7 @@ class CreateForm extends React.Component {
                     className="form-control"
                     name="name"
                     placeholder="Enter channel name"
-                    onChange={this.changeHandler}
+                    onchangeText={this.changeHandler}
                   />
                 </View>
                 <View className="form-group">
@@ -56,7 +56,7 @@ class CreateForm extends React.Component {
                     className="form-control"
                     name="image_url"
                     placeholder="Enter image url"
-                    onChange={this.changeHandler}
+                    onchangeText={this.changeHandler}
                   />
                 </View>
                 <View className="text-center mt-4">

@@ -49,7 +49,7 @@ class RegistationForm extends Component {
                     type="text"
                     placeholder="Username"
                     name="username"
-                    onChange={this.changeHandler}
+                    onchangeText={this.changeHandler}
                   />
                 </View>
                 <View className="form-group">
@@ -58,7 +58,7 @@ class RegistationForm extends Component {
                     type="password"
                     placeholder="Password"
                     name="password"
-                    onChange={this.changeHandler}
+                    onchangeText={this.changeHandler}
                   />
                 </View>
                 <input

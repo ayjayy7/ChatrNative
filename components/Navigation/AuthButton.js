@@ -29,11 +29,18 @@ const AuthButton = ({ user, logout }) => {
     buttons = (
       <>
         <span className="navbar-text ">{user.username}</span>
+<<<<<<< HEAD
         <ListItem>
           className="nav-item">
           <Text className="nav-link">
             <FontAwesomeIcon icon={faSignOutAlt} onClick={logout} /> Logout
           </Text>
+=======
+        <ListItem className="nav-item">
+          <span className="nav-link">
+            <FontAwesomeIcon icon={faSignOutAlt} onClick={logout} /> Logout
+          </span>
+>>>>>>> 24caa25ef952846ce968b09b6904e1d844711ed6
         </ListItem>
       </>
     );

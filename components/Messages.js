@@ -12,6 +12,9 @@ import {
   View
 } from "native-base";
 
+// react-native
+import { View } from "native-base";
+
 const Messages = props => {
   return (
     <ListItem>

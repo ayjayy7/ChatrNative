@@ -13,6 +13,9 @@ import {
   View
 } from "native-base";
 
+// react-native
+import { View } from "native-base";
+
 const SuperSecretPage = ({ user }) => {
   if (!user) return <Redirect to="/login" />;
 
