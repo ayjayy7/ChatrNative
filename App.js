@@ -1,19 +1,32 @@
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, Footer, View } from "react-native";
+import React, { Component } from "react";
 
-export default function App() {
-  return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-    </View>
-  );
+// Scripts
+import main from "./assets/js/main";
+
+// Components
+import NavBar from "./components/Navigation/NavBar";
+
+import AppContainer from "./components/Navigation/index";
+import { connect } from "react-redux";
+class App extends Component {
+  componentDidMount() {
+    main();
+  }
+
+  render() {
+    return (
+      <View className="content-wrapper bg-transparent">
+        <NavBar />
+        <AppContainer />
+      </View>
+    );
+  }
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+const mapStateToProps = state => {
+  return {
+    user: state.user.user
+  };
+};
+export default connect(mapStateToProps)(App);
