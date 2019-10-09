@@ -1,6 +1,10 @@
 import React from "react";
 import { connect } from "react-redux";
 import { fetchChannel, sendMessage } from "../redux/actions";
+
+// react-native
+import { View } from "native-base";
+
 class MessageBox extends React.Component {
   state = {
     message: ""
@@ -36,7 +40,7 @@ class MessageBox extends React.Component {
             <textarea
               name="message"
               placeholder="Type your message"
-              onChange={this.changeHandler}
+              onchangeText={this.changeHandler}
             ></textarea>
           </View>
           <View className="col-2" style={{ padding: 0 }}>

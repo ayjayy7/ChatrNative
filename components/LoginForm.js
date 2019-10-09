@@ -3,6 +3,9 @@ import { Link, Redirect } from "react-router-dom";
 import { connect } from "react-redux";
 import * as actionCreators from "../redux/actions";
 
+// react-native
+import { View } from "native-base";
+
 class Login extends Component {
   state = {
     username: "",
@@ -37,7 +40,7 @@ class Login extends Component {
                       value={username}
                       name="username"
                       placeholder="Username"
-                      onChange={this.handleChange}
+                      onchangeText={this.handleChange}
                     />
                   </View>
                   <View className="form-group">
@@ -49,7 +52,7 @@ class Login extends Component {
                       value={password}
                       name="password"
                       placeholder="Password"
-                      onChange={this.handleChange}
+                      onchangeText={this.handleChange}
                     />
                     <p style={{ color: "red" }}>
                       {" "}

@@ -2,6 +2,9 @@ import React from "react";
 import { Redirect } from "react-router-dom";
 import { connect } from "react-redux";
 
+// react-native
+import { View } from "native-base";
+
 const SuperSecretPage = ({ user }) => {
   if (!user) return <Redirect to="/login" />;
 

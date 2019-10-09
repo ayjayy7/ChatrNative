@@ -5,6 +5,9 @@ import { fetchChannel, sendMessage } from "../redux/actions";
 import { Redirect } from "react-router-dom";
 import { Text, View } from "native-base";
 
+// react-native
+import { View } from "native-base";
+
 //////////////////
 import "emoji-mart/css/emoji-mart.css";
 import { Picker } from "emoji-mart";
@@ -94,9 +97,14 @@ class Channel extends React.Component {
             <form name="messageForm" onSubmit={this.submitHandler}>
               <View className=" col-12 ">
                 <View className=" btn float-right pull-right">
-                  <image
+
+                  <Image
                     id="ej"
-                    source="https://cdn.shopify.com/s/files/1/1061/1924/files/Hugging_Face_Emoji_2028ce8b-c213-4d45-94aa-21e1a0842b4d_large.png?15202324258887420558"
+                    source={{
+                      uri:
+                        "https://cdn.shopify.com/s/files/1/1061/1924/files/Hugging_Face_Emoji_2028ce8b-c213-4d45-94aa-21e1a0842b4d_large.png?15202324258887420558"
+                    }}
+
                     onClick={() => this.setState({ show: !this.state.show })}
                   />
                   <Text>
@@ -112,7 +120,7 @@ class Channel extends React.Component {
                   className=" col-9 rounded-pill shadow  float-right pull-right"
                   name="message"
                   placeholder="Type your message"
-                  onChange={this.changeHandler}
+                  onchangeText={this.changeHandler}
                   value={this.state.message}
                 ></textarea>
               </View>

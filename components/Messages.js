@@ -1,5 +1,8 @@
 import React from "react";
 
+// react-native
+import { View } from "native-base";
+
 const Messages = props => {
   return (
     <li>

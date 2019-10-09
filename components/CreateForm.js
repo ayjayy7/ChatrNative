@@ -31,24 +31,29 @@ class CreateForm extends React.Component {
             <View className="card-body">
               <form name="createForm" onSubmit={this.submitHandler}>
                 <View className="form-group">
-                  <Text className="h4 text-center mb-4">Create a Channel</Text>
-                  <Text htmlFor="channelname"> Channel Name</Text>
+
+                  <p className="h4 text-center mb-4">Create a Channel</p>
+                  <label htmlFor="channelname"> Channel Name</label>
+                  <br />
+
                   <input
                     type="text"
                     className="form-control"
                     name="name"
                     placeholder="Enter channel name"
-                    onChange={this.changeHandler}
+                    onchangeText={this.changeHandler}
                   />
+
+                  <br />
                 </View>
                 <View className="form-group">
-                  <Text htmlFor="backgroundimage">Background image</Text>
+
                   <input
                     type="text"
                     className="form-control"
                     name="image_url"
                     placeholder="Enter image url"
-                    onChange={this.changeHandler}
+                    onchangeText={this.changeHandler}
                   />
                 </View>
                 <View className="text-center mt-4">
@@ -56,6 +61,9 @@ class CreateForm extends React.Component {
                     Create
                   </button>
                 </View>
+
+                <br />
+
               </form>
             </View>
           </View>

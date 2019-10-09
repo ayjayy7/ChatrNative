@@ -12,12 +12,16 @@ class SearchBar extends React.Component {
           <input
             className="form-control"
             type="text"
-            onChange={event => this.props.filterChannels(event.target.value)}
+            onchangeText={event =>
+              this.props.filterChannels(event.target.value)
+            }
           />
           <View className="input-group-append">
+
             <Text className="input-group-text">
               <FontAwesomeIcon icon={faSearch} />
             </Text>
+
           </View>
         </View>
       </View>

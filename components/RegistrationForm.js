@@ -2,6 +2,10 @@ import React, { Component } from "react";
 import { Link, Redirect } from "react-router-dom";
 import { connect } from "react-redux";
 import * as actionCreators from "../redux/actions";
+
+// react-native
+import { View } from "native-base";
+
 class RegistationForm extends Component {
   state = {
     username: "",
@@ -38,7 +42,7 @@ class RegistationForm extends Component {
                     type="text"
                     placeholder="Username"
                     name="username"
-                    onChange={this.changeHandler}
+                    onchangeText={this.changeHandler}
                   />
                 </View>
                 <View className="form-group">
@@ -47,7 +51,7 @@ class RegistationForm extends Component {
                     type="password"
                     placeholder="Password"
                     name="password"
-                    onChange={this.changeHandler}
+                    onchangeText={this.changeHandler}
                   />
                 </View>
                 <input

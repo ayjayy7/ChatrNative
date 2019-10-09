@@ -44,8 +44,10 @@ class SideNav extends React.Component {
               <span className="nav-link-text mr-2">Channels</span>
               <FontAwesomeIcon icon={faPlusCircle} />
             </Link>
+
             <SearchBar onChange={this.filterChannels} />
           </ListItem>
+
           {channelLinks}
         </List>
         <List className="navbar-nav sidenav-toggler bg-danger">
@@ -63,8 +65,10 @@ class SideNav extends React.Component {
                 icon={this.state.collapsed ? faAngleRight : faAngleLeft}
               />
             </span>
+
           </ListItem>
         </List>
+
       </View>
     );
   }
